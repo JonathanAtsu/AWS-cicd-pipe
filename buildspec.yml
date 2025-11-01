@@ -19,10 +19,10 @@ phases:
       - printf '[{"name":"%s","imageUri":"%s"}]' "$CONTAINER_NAME" "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG" > imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
-    secrets-manager:
-  DOCKERHUB_USERNAME: mydockerhub:username
-  DOCKERHUB_PASSWORD: mydockerhub:password
-pre_build:
-  commands:
-    - docker login -u yourusername -p yourpassword
+   # secrets-manager:
+  #DOCKERHUB_USERNAME: mydockerhub:username
+  #DOCKERHUB_PASSWORD: mydockerhub:password
+#_build:
+ # commands:
+  #  - docker login -u yourusername -p yourpassword
 
